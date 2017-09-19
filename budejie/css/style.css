@@ -1,0 +1,60 @@
+#logo{
+	width: 115px;height: 25px;
+    background: url(../img/app.png) no-repeat;
+    background-size: 150px auto;
+    background-position: -15px -2px;
+    margin-left: 10px;
+}
+.u-headBar{
+	padding: 0;
+}
+.bar-subheader .button-bar .u-btnBar{
+	padding: 0;color:#333;margin-top: 2px;
+	font-size: 16px;
+}
+.bar-subheader .button-bar .u-btnBar.select{
+	color:#e21145;border-bottom: 2px solid #e21145;
+	box-sizing: border-box;margin-top: 2px;
+}
+ion-content .u-ulList{
+	border-bottom: 10px solid #ececec !important;
+}
+ion-content .list .u-username{
+	color: #888;
+    font-size: 14px;
+    padding-top: 2px;
+}
+ion-content .list .item.item-text-wrap{
+	padding-top: 0;
+}
+ion-content .list .item p.u-text{
+	font-size: 16px;
+	color: #333;
+}
+ion-content .list .item.u-btn{
+	padding-top: 0;display: flex;justify-content: space-around;
+}
+ion-content .list .item.u-btn button{
+	color: #666;
+}
+
+ion-content #u-pageBtn{
+	display: flex;align-items: center;justify-content: space-around;
+}
+ion-content #u-pageBtn .item{
+	padding: 0;
+}
+ion-content #u-pageBtn .item button{
+	display: inline-block;padding: 0;
+	color:#333;min-width: 30px;min-height: 30px;
+    line-height: 30px;margin: 3px;
+    border: 1px solid #e0e0e0;
+}
+ion-content #u-pageBtn .item button.select{
+    background-color: #e21145;
+    color: #fff;
+}
+
+.u-noborder {
+    border: none !important;
+}

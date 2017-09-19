@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="lib/css/ionic.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+
+	<title>百思不得姐</title>
+</head>
+<body ng-app="myApp">
+	<ion-header-bar class="bar-assertive">
+		<button class="button button-clear" id="logo"></button>
+	</ion-header-bar>
+	<ion-header-bar class="bar-subheader u-headBar">
+		<div class="button-bar">
+			<button 
+				class="button button-clear u-btnBar "
+				ng-class="{ select : tab.isOk }"
+				ng-click="change($index)"
+				ng-repeat=" tab in tabBtns"
+				>{{tab.name}}</button>
+			<!-- <button class="button button-clear u-btnBar"></button>
+			<button class="button button-clear u-btnBar"></button>
+			<button class="button button-clear u-btnBar select"></button>
+			<button class="button button-clear u-btnBar"></button>
+			<button class="button button-clear u-btnBar"></button> -->
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="has-tabs">
+		<ion-refresher
+			pulling-text="{{ pullingText }}"
+			refreshing-text = "刷新中..." 
+            spinner="android" 
+            on-refresh="doRefresh();"
+            on-pulling="doPulling();" style="border-bottom: 1px solid #ccc;">
+		</ion-refresher>
+
+
+		<!-- 视图  模板是放在这一个div里面 -->
+	    <div ng-view></div>
+
+		<ul class="list list-borderless" id="u-pageBtn" >
+			<li class="item">第</li>
+			<li class="item">
+				<button 
+					class="button button-clear {{pages == currentPage ? 'select' : ''}}"
+					ng-repeat="pages in pageList" 
+					ng-click="browsePage(pages)"
+                    ng-class="{true: 'u-noborder disabled'}[pages == '...']" 
+					>{{pages}}
+				</button>
+			</li>
+			<li class="item">页</li>
+		</ul>
+		
+		<div class="padding">
+			<button 
+				class="button button-block button-assertive" 
+				ng-class="{disabled : flag}" 
+				ng-click="nextPage();"
+				>下一页 >>
+			</button>
+		</div>
+		
+	</ion-content>
+
+
+
+	<script src="lib/js/ionic.bundle.min.js"></script>
+	
+	<script src="lib/js/angular-route.min.js"></script>
+	<script src="lib/js/angular-sanitize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/service.js"></script>
+</body>
+</html>
